@@ -1,0 +1,15 @@
+{% if loginState %}
+<header>
+    <a href="/">메인 페이지</a>
+    <a href="/checkList">체크리스트</a>
+    <a href="/logOut">로그아웃</a>
+    <a href="/exit">회원 탈퇴</a>
+</header>
+{% else %}
+<header>
+    <a href="/">메인 페이지</a>
+    <a href="/login">로그인</a>
+    <a href="/join">회원가입</a>
+    <a href="/checkList">체크리스트</a>
+</header>
+{% endif %}
