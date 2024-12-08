@@ -1,0 +1,87 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    margin: 0;
+    padding-left: 20px;
+}
+
+#text {
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+  
+p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    margin: 0;
+}
+
+#goToCheckList {
+    font-size: 18px;
+    border-radius: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-left: 20px;
+    outline: 1px solid black;
+    background-color: black;
+    color: white;
+}
+
+#modifyCheckList {
+    display: inline-flex;
+    font-size: 18px;
+    border-radius: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin: auto;
+    outline: 1px solid black;
+    background-color: black;
+    color: white;
+}
+
+div {
+    display: inline-flex;
+    justify-content: center;
+    border-radius: 30px;
+    outline: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: gray;
+    margin-left: 20px;
+    margin-right: auto;
+}
+
+li {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+ul {
+    display: inline-flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-width: 330px;
+    min-height: 300px;
+    border-radius: 15px;
+    outline: 1px solid  rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.1);
+}
