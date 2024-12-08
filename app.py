@@ -151,12 +151,12 @@ def join():
 # 체크리스트 작성 처리
 @app.route('/checkList/', methods=['GET', 'POST'])
 def postCheckList():
-    userid = request.cookies.get('user_id')
+    userid = request.cookies.get('user_id') # 쿠키로 전달된 유저 식별 정보 가져오기
     selectQuery = f"""
         SELECT post_id, text FROM CheckList WHERE
         user_id = {userid};
     """
-    if not userid:
+    if not userid: # 쿠키가 발급되지 않은 경우, 로그인 페이지로 리디렉션
         message = """
             <script>
               let check = confirm('해당 기능은 로그인 후 이용하실 수 있습니다');
@@ -169,11 +169,10 @@ def postCheckList():
     
     if request.method == 'POST':
         postData = request.form.to_dict()
-        print(postData)
-        if 'text' in postData:
-            if postData['text'] == '':
+        if 'text' in postData:  # '+' 버튼을 눌러 체크리스트를 추가한 경우
+            if postData['text'] == '':  # 체크리스트의 값이 빈 문자열인 경우 데이터를 저장하지 않음
                 return redirect('/checkList/')
-        if 'delete' in postData:
+        if 'delete' in postData: # 'X' 버튼을 눌러 체크리스트 삭제 요청을 보낸 경우
             deleteQuery = f"""
                 DELETE FROM CheckList
                 WHERE post_id={postData['delete']};
@@ -184,6 +183,7 @@ def postCheckList():
             connect.commit()
             connect.close()
             return redirect('/checkList/')
+        # 체크리스트를 가져와 입력 폼 밑에 출력하기
         insertQuery = f"""
         INSERT INTO CheckList (
         user_id,
