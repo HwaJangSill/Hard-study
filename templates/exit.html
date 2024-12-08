@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <title>Flask Web Site</title>
+    <link rel="stylesheet" href="/static/header.css">
+    <link rel="stylesheet" href="/static/exit.css">
+    <link rel="stylesheet" href="/static/footer.css">
+</head>
+<body>
+    {% block header %}
+        {% include "header.html" %}
+    {% endblock %}
+    <main>
+        <h1>회원 탈퇴</h1>
+        <form action="/exit/" method="post">
+            <label for="emailBox">이메일</label>
+            <input type="email" name="email" id="emailBox" />
+            <label for="pwBox">패스워드</label>
+            <input type="password" name="pw" id="pwBox" />
+            <button type="submit">탈퇴하기</button>
+        </form>
+    </main>
+    {% block footer %}
+        {% include "footer.html" %}
+    {% endblock %}
+</body>
+</html>
