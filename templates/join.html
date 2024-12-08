@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <title>Flask Web Site</title>
+    <link rel="stylesheet" href="/static/header.css">
+    <link rel="stylesheet" href="/static/join.css">
+    <link rel="stylesheet" href="/static/footer.css">
+</head>
+<body>
+    {% block header %}
+        {% include "header.html" %}
+    {% endblock %}
+    <main>
+        <h1>회원가입</h1>
+        <form action="/join/" method="POST" id="joinForm">
+            <label for="track">트랙</label>
+            <select name="track" id="track">
+                <option value="Web">웹해킹</option>
+                <option value="Reversing">리버싱</option>
+                <option value="System">시스템</option>
+            </select>
+            <label for="plan">플랜</label>
+            <select name="plan" id="plan">
+                <option value="Survival">Survival</option>
+                <option value="full">full</option>
+            </select>
+            <label for="name">이름</label>
+            <input type="text" name="name" id="name" />
+            <label for="email">이메일</label>
+            <input type="email" name="email" id="email" required />
+            <label for="pw">패스워드</label>
+            <input type="password"  name="pw" id="pw" required />
+            <label for="doubleCheck">중복 확인</label>
+            <input type="password"  name="pw" id="doubleCheck" required />
+            <button type="submit">가입하기</button>
+        </form>
+    </main>
+    {% block footer %}
+        {% include "footer.html" %}
+    {% endblock %}
+</body>
+</html>
